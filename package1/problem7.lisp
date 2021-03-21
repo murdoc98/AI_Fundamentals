@@ -1,0 +1,16 @@
+(defun intercala (l1 l2 &optional (res NIL))
+    (if (and (not (null l1)) (not (null l2)))
+        (progn
+            (setq res (append res (list (first l1))))
+            (setq res (append res (list (first l2))))
+            (intercala (rest l1) (rest l2) res)
+        )
+        (progn
+            (append res l1)
+            (append res l2)
+        )
+    )
+)
+(defvar res NIL)
+(setq res (intercala '(1 2 3 4) '(5 6 7 8 9 10)))
+(format T "~d ~%" res)
