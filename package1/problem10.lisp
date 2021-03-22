@@ -2,7 +2,6 @@
     (format T "Año ~d ~%" year)
     (or (equal 0 (mod year 400)) (and (equal 0 (mod year 4)) (/= 0 (mod year 100))))
 )
-(format T "Es bisiesto: ~d ~%" (or NIL NIL))
 (format T "Es bisiesto: ~d ~%" (leap-year 1700))
 (format T "Es bisiesto: ~d ~%" (leap-year 2000))
 (format T "Es bisiesto: ~d ~%" (leap-year 2008))
